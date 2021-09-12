@@ -1,8 +1,12 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
   "description": "[![Actions Status](https://github.com/Disday/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/Disday/frontend-project-lvl2/actions)",
-  "main": "index.js",
+  "main": "bin/gendiff.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Disday/frontend-project-lvl2/issues"
   },
-  "homepage": "https://github.com/Disday/frontend-project-lvl2#readme"
+  "homepage": "https://github.com/Disday/frontend-project-lvl2#readme",
+  "dependencies": {
+    "commander": "^8.1.0"
+  }
 }
