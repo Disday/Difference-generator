@@ -5,7 +5,7 @@ import _ from 'lodash';
 const buildAbsPath = (filepath) => path.resolve(process.cwd(), filepath);
 
 const parse = (filepath, ext) => {
-  const parsers = { '.json': JSON.parse, };
+  const parsers = { '.json': JSON.parse };
   const parserFunc = parsers[ext];
   return parserFunc(filepath);
 };
