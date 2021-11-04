@@ -9,3 +9,6 @@ lint:
 
 test:
 	npm test
+
+run:
+	gendiff __fixtures__/dataset1/file1.json __fixtures__/dataset1/file2.json

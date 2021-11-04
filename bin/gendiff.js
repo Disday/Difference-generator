@@ -7,10 +7,10 @@ const app = new Command();
 app
   .description('Compares two configuration files and shows diffrence.')
   .version('1.0.0')
-  .option('-f, --format [type]', 'output format')
+  .option('-f, --format [type]', 'output format', 'stylish')
   .arguments('<filepath1> <filepath2>')
   .action((filepath1, filepath2, options) => {
-    const diff = genDiff(filepath1, filepath2);
+    const diff = genDiff(filepath1, filepath2, options.format);
     console.log(diff);
   });
 
