@@ -2,8 +2,7 @@ import _ from 'lodash';
 
 const buildDiffTree = (obj1, obj2) => {
   const keys = _.union(_.keys(obj1), _.keys(obj2));
-  return keys
-    .sort()
+  return _.sortBy(keys)
     .flatMap((key) => {
       const value1 = obj1[key];
       const value2 = obj2[key];

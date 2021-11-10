@@ -24,9 +24,9 @@ test.each(data)('%s vs %s: %s', (filepath1, filepath2, format, resultPath) => {
 test('invalid file', () => {
   const filepath2 = buildPath('file2.json');
   const nonExistFile = buildPath('nonExistPath');
-  expect(genDiff(nonExistFile, filepath2)).toContain('File not found');
+  expect(() => genDiff(nonExistFile, filepath2)).toThrowError('File not found');
   const wrongFormatFile = buildPath('file1.doc');
-  expect(genDiff(wrongFormatFile, filepath2)).toContain('Unsupported format');
+  expect(() => genDiff(wrongFormatFile, filepath2)).toThrowError('Unsupported format');
 });
 
 test('relative paths', () => {

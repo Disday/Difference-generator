@@ -1,5 +1,4 @@
 import yaml from 'js-yaml';
-import CustomError from './CustomError.js';
 
 const parsers = {
   '.json': JSON.parse,
@@ -9,7 +8,7 @@ const parsers = {
 
 export default (data, ext) => {
   if (!parsers[ext]) {
-    throw new CustomError(`Unsupported format ${ext}`);
+    throw new Error(`Unsupported format ${ext}`);
   }
   const parser = parsers[ext];
   return parser(data);
