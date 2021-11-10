@@ -10,7 +10,7 @@ const buildPath = (fileName) => path.join(__dirname, '..', '__fixtures__', fileN
 const data = [
   ['file1.json', 'file2.json', 'stylish', 'stylish.txt'],
   ['file1.yaml', 'file2.yml', 'stylish', 'stylish.txt'],
-  // ['file1.json', 'file2.yml', 'stylish.txt'],
+  ['file1.json', 'file2.yml', 'plain', 'plain.txt'],
 ];
 
 test.each(data)('%s vs %s: %s', (filepath1, filepath2, format, resultPath) => {
@@ -33,19 +33,3 @@ test('relative paths', () => {
   const expected = readFileSync(buildPath('stylish.txt'), 'utf8');
   expect(genDiff('__fixtures__/file1.json', '__fixtures__/file2.json')).toEqual(expected);
 });
-
-// test('tree json', () => {
-//   const filepath1 = buildPath('file1.json');
-//   const filepath2 = buildPath('file2.json');
-//   const diff = readFileSync(buildPath('result.txt'), 'utf8');
-//   expect(genDiff(filepath1, filepath2)).toBe(diff);
-//   expect(genDiff('__fixtures__/file1.json', filepath2)).toBe(diff);
-// });
-
-// test('tree yaml', () => {
-//   const filepath1 = buildPath('file1.yaml');
-//   const filepath2 = buildPath('file2.yml');
-//   const diff = readFileSync(buildPath('result.txt'), 'utf8');
-//   expect(genDiff(filepath1, filepath2)).toBe(diff);
-//   // expect(genDiff('__fixtures__/dataset1/file1.json', filepath2)).toBe(diff);
-// });

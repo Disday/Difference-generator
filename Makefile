@@ -10,5 +10,8 @@ lint:
 test:
 	npm test
 
+run-plain:
+	gendiff __fixtures__/file1.json __fixtures__/file2.json -f plain
+
 run:
-	gendiff __fixtures__/dataset1/file1.json __fixtures__/dataset1/file2.json
+	gendiff __fixtures__/file1.json __fixtures__/file2.json
