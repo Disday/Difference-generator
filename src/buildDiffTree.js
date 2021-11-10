@@ -7,7 +7,6 @@ const buildDiffTree = (obj1, obj2) => {
     .flatMap((key) => {
       const value1 = obj1[key];
       const value2 = obj2[key];
-
       if (_.isObject(value1) && _.isObject(value2)) {
         const children = buildDiffTree(value1, value2);
         return { key, value: children, state: 'unchanged' };
