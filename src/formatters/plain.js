@@ -1,8 +1,6 @@
 import isArray from 'lodash/isArray.js';
 import isPlainObject from 'lodash/isPlainObject.js';
 
-const immutableReverse = (coll) => coll.reduceRight((acc, elem) => [...acc, elem], []);
-
 const stringify = (data) => {
   if (isPlainObject(data)) {
     return '[complex value]';
@@ -26,12 +24,12 @@ const buildLine = (path, { value, state }) => {
 const buildLines = (tree, pathParts = []) => {
   const iter = (acc, elem) => {
     const { key, value, state } = elem;
-    const currentPathParts = [key, ...pathParts];
+    const currentPathParts = [...pathParts, key];
     if (state !== 'updated' && isArray(value)) {
       const nested = buildLines(value, currentPathParts);
       return [...acc, ...nested];
     }
-    const path = immutableReverse(currentPathParts).join('.');
+    const path = currentPathParts.join('.');
     const line = buildLine(path, elem);
     return [...acc, line];
   };
