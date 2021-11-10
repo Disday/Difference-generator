@@ -11,6 +11,7 @@ const data = [
   ['file1.json', 'file2.json', 'stylish', 'stylish.txt'],
   ['file1.yaml', 'file2.yml', 'stylish', 'stylish.txt'],
   ['file1.json', 'file2.yml', 'plain', 'plain.txt'],
+  ['file1.json', 'file2.yml', 'json', 'json.json'],
 ];
 
 test.each(data)('%s vs %s: %s', (filepath1, filepath2, format, resultPath) => {
