@@ -13,4 +13,4 @@ Difference generator (CLI-утилита для генерации разниц�
 ## Features
 - Tree as data structure and recursive algorithms
 - Input formats: JSON, YAML
-- Output formats: 
+- Output formats: JSON, stylish, plain
